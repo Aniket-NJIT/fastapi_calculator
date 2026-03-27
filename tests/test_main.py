@@ -20,7 +20,7 @@ def test_divide_route():
 def test_divide_by_zero_route():
     response = client.post("/divide", json={"a": 10, "b": 0})
     assert response.status_code == 400
-    assert "Cannot divide by zero!" in response.json()["detail"]
+    assert "Cannot divide by zero!" in response.json()["error"]
 
 def test_validation_error():
     response = client.post("/add", json={"a": "string", "b": 3})
