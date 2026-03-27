@@ -12,6 +12,16 @@ def test_add_route():
     assert response.status_code == 200
     assert response.json() == {"result": 8.0}
 
+def test_subtract_route():
+    response = client.post("/subtract", json={"a": 10, "b": 4})
+    assert response.status_code == 200
+    assert response.json() == {"result": 6.0}
+
+def test_multiply_route():
+    response = client.post("/multiply", json={"a": 5, "b": 5})
+    assert response.status_code == 200
+    assert response.json() == {"result": 25.0}
+
 def test_divide_route():
     response = client.post("/divide", json={"a": 10, "b": 2})
     assert response.status_code == 200
